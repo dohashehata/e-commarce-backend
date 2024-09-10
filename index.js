@@ -34,6 +34,9 @@ app.use('/wishlist',wishlistRouter)
 app.use('/cart',cartRouter)
 app.use('/coupon',couponRouter)
 app.use('/order',orderRouter)
+app.all('*',(req,res,next)=>{
+    res.status(404).json({message:'Route not found'})
+})
 
 // listen server
 // globalErrorHandling
